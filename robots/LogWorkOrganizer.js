@@ -40,11 +40,18 @@ async function robot(browser) {
     function DefineWorkLogDate(){
 
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dec']
+        let resp, day, month, year
 
-        const day = readline.question('Informar o dia (DD): ', { limit: input => input>=1 && input<=31, limitMessage: 'Must be a number between 1 and 31'})
-        const month = months[readline.question('Informar o dia (MM): ', { limit: input => input>=1 && input<=12, limitMessage: 'Must be a number between 1 and 12'}) - 1]
-        const year = readline.question('Informar o dia (YYYY): ', { limit: input => input>=2020 && input<=2100, limitMessage: 'Must be a number between 2020 and 2030'})
+        do {
+            day = readline.question('Informar o dia (DD): ', { limit: input => input>=1 && input<=31, limitMessage: 'Must be a number between 1 and 31'})
+            month = months[readline.question('Informar o dia (MM): ', { limit: input => input>=1 && input<=12, limitMessage: 'Must be a number between 1 and 12'}) - 1]
+            year = readline.question('Informar o dia (YYYY): ', { limit: input => input>=2020 && input<=2100, limitMessage: 'Must be a number between 2020 and 2030'})
+        
+            resp = readline.question(`Do you confirm the date ${day}-${month}-${year} [Y/n]: `, {limit: input => input.toUpperCase() == 'Y' || input.toUpperCase() == 'N'}).toUpperCase()
+        
+            if (resp != 'Y') console.log('ok... Vamos tentar novamente:')
 
+        } while (resp.toUpperCase() != 'Y')
 
         content.workLogData.forEach( worklog => {
             worklog.workLogDate =  {
@@ -53,8 +60,9 @@ async function robot(browser) {
             }            
         })
 
-
     }
+
+
 
     function DefineTimeLogForJira(){
         content.workLogData.forEach( workLog => {
@@ -76,9 +84,8 @@ async function robot(browser) {
             }
 
             const jiraIssue = content.jiraIssues.find( issue => issue.alias == workLog.jiraIssue.alias )
-            
             if (jiraIssue) workLog.jiraIssue.id = jiraIssue.id
-            
+
         })
     }
 
@@ -86,7 +93,8 @@ async function robot(browser) {
 
         const workLogWithoutIssueID = content.workLogData.filter( workLog => workLog.jiraIssue.id == '')
 
-        const workLogPromisses = workLogWithoutIssueID.map( async workLog => {
+        const workLogPromisses = workLogWithoutIssueID.map( async workLog => { 
+                        
             const page = await browser.newPage()
             await page.goto(`https://jira.weg.net/browse/${workLog.jiraIssue.alias}`)
             const issueId = await page.$eval('#key-val', el => el.rel)
@@ -104,9 +112,7 @@ async function robot(browser) {
         await Promise.all(workLogPromisses)
 
     }
-
-
-        
+            
 }
 
 module.exports = robot
