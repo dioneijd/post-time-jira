@@ -15,8 +15,6 @@ async function robot(browser) {
         let cred = {
             user: readline.question('Type your user login: '),
             password: readline.question('Type your password: ', {hideEchoBack: true}),
-            // user: 'dioneid',
-            // password: 'asd.,123'
         }
         return cred
     }

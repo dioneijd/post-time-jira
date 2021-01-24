@@ -1,1 +1,213 @@
-{"paramenters":{"csv_file":{"filePath":"C:/Users/dioneid/Desktop/JS Tests/post-time-jira/content/excel_data.csv","noheader":true,"headers":["timeLog","comments","issueDescription","jiraIssue"],"delimiter":["\t"]}},"jiraIssues":[{"id":"179820","alias":"WPE-492"},{"id":"172532","alias":"ASBOPV-14"},{"id":"172528","alias":"ASBOPV-10"},{"id":"69564","alias":"PTI-12"},{"id":"69561","alias":"PTI-9"},{"id":"69544","alias":"PTI-1"},{"id":"172529","alias":"ASBOPV-11"},{"id":"69562","alias":"PTI-10"},{"id":"69565","alias":"PTI-13"},{"id":"176366","alias":"WATT-1875"},{"id":"69560","alias":"PTI-8"},{"id":"69563","alias":"PTI-11"},{"id":"141882","alias":"V2COM-195"},{"id":"141706","alias":""}],"workLogData":[{"timeLog":{"excelStandard":"02:57","jiraStandard":"02h 57m","hour":"02","minute":"57"},"comments":"Avaliando o Material quality da V2Com","issueDescription":"V2Com - Saneamento de Visões: V2COM-195","jiraIssue":{"id":"141882","alias":"V2COM-195"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"01:12","jiraStandard":"01h 12m","hour":"01","minute":"12"},"comments":"Criando novos validation para V2com","issueDescription":"V2Com - Saneamento de Visões: V2COM-195","jiraIssue":{"id":"141882","alias":"V2COM-195"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"00:00","jiraStandard":"00h 00m","hour":"00","minute":"00"},"comments":"","issueDescription":"","jiraIssue":{"id":"141706","alias":""},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"00:31","jiraStandard":"00h 31m","hour":"00","minute":"31"},"comments":"Criando novos validation para V2com","issueDescription":"V2Com - Saneamento de Visões: V2COM-195","jiraIssue":{"id":"141882","alias":"V2COM-195"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"00:48","jiraStandard":"00h 48m","hour":"00","minute":"48"},"comments":"Ajuda Jehan - Problema layout WIT","issueDescription":"Consultoria: PTI-9","jiraIssue":{"id":"69561","alias":"PTI-9"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"01:24","jiraStandard":"01h 24m","hour":"01","minute":"24"},"comments":"Criando novos validation para V2com","issueDescription":"V2Com - Saneamento de Visões: V2COM-195","jiraIssue":{"id":"141882","alias":"V2COM-195"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"00:26","jiraStandard":"00h 26m","hour":"00","minute":"26"},"comments":"Pausa - Saida particular","issueDescription":"Ausencia: PTI-8","jiraIssue":{"id":"69560","alias":"PTI-8"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}},{"timeLog":{"excelStandard":"01:38","jiraStandard":"01h 38m","hour":"01","minute":"38"},"comments":"Ajuda Gabe - Problema com Short Description WUK","issueDescription":"Consultoria: PTI-9","jiraIssue":{"id":"69561","alias":"PTI-9"},"workLogDate":{"jsStandard":"2021-01-13T03:00:00.000Z","jiraStandard":"13/Jan/2021 08:00 PM"}}]}
+{
+    "paramenters": {
+        "csv_file": {
+            "filePath": "C:/Users/dioneid/Desktop/JS Tests/post-time-jira/content/excel_data.csv",
+            "noheader": true,
+            "headers": ["timeLog", "comments", "issueDescription", "jiraIssue"],
+            "delimiter": ["\t"]
+        }
+    },
+    "jiraIssues": [
+        { "id": "179820", "alias": "WPE-492" },
+        { "id": "172528", "alias": "ASBOPV-10" },
+        { "id": "172529", "alias": "ASBOPV-11" },
+        { "id": "172532", "alias": "ASBOPV-14" },
+        { "id": "69544", "alias": "PTI-1" },
+        { "id": "69560", "alias": "PTI-8" },
+        { "id": "69561", "alias": "PTI-9" },
+        { "id": "69562", "alias": "PTI-10" },
+        { "id": "69563", "alias": "PTI-11" },
+        { "id": "69564", "alias": "PTI-12" },
+        { "id": "69565", "alias": "PTI-13" },
+        { "id": "97942", "alias": "WATT-1543" },
+        { "id": "176366", "alias": "WATT-1875" },
+        { "id": "178497", "alias": "WATT-2061" },
+        { "id": "141882", "alias": "V2COM-195" },
+        { "id": "141883", "alias": "V2COM-196" },
+        { "id": "106617", "alias": "SMPW-5" },
+        { "id": "164353", "alias": "SMPW-13" },
+        { "id": "182043", "alias": "SMPW-26" }
+    ],
+    "workLogData": [
+        {
+            "timeLog": {
+                "excelStandard": "00:30",
+                "jiraStandard": "00h 30m",
+                "hour": "00",
+                "minute": "30"
+            },
+            "comments": "Ajuda Fabiano com o Hana",
+            "issueDescription": "Consultoria: PTI-9",
+            "jiraIssue": { "id": "69561", "alias": "PTI-9" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:30",
+                "jiraStandard": "00h 30m",
+                "hour": "00",
+                "minute": "30"
+            },
+            "comments": "Reunião diaria V2com",
+            "issueDescription": "V2Com - Integration Meeting: V2COM-196",
+            "jiraIssue": { "id": "141883", "alias": "V2COM-196" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:44",
+                "jiraStandard": "00h 44m",
+                "hour": "00",
+                "minute": "44"
+            },
+            "comments": "Reunião sobre validation V2com",
+            "issueDescription": "V2Com - Integration Meeting: V2COM-196",
+            "jiraIssue": { "id": "141883", "alias": "V2COM-196" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "01:46",
+                "jiraStandard": "01h 46m",
+                "hour": "01",
+                "minute": "46"
+            },
+            "comments": "Organização das atividades do Jira",
+            "issueDescription": "Saneamento - Reunião de Status: SMPW-5",
+            "jiraIssue": { "id": "106617", "alias": "SMPW-5" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:49",
+                "jiraStandard": "00h 49m",
+                "hour": "00",
+                "minute": "49"
+            },
+            "comments": "Reunião WATT",
+            "issueDescription": "Watt Drive - Kits: WATT-1875",
+            "jiraIssue": { "id": "176366", "alias": "WATT-1875" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:30",
+                "jiraStandard": "00h 30m",
+                "hour": "00",
+                "minute": "30"
+            },
+            "comments": "Reunião sobre atualização da AWS",
+            "issueDescription": "Consultoria: PTI-9",
+            "jiraIssue": { "id": "69561", "alias": "PTI-9" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:43",
+                "jiraStandard": "00h 43m",
+                "hour": "00",
+                "minute": "43"
+            },
+            "comments": "Alinhamento Tironi sobre validations",
+            "issueDescription": "Saneamento - Reunião de Status: SMPW-5",
+            "jiraIssue": { "id": "106617", "alias": "SMPW-5" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "01:21",
+                "jiraStandard": "01h 21m",
+                "hour": "01",
+                "minute": "21"
+            },
+            "comments": "Revisão dos validation Data cleansing",
+            "issueDescription": "V2Com - Saneamento de Visões: V2COM-195",
+            "jiraIssue": { "id": "141882", "alias": "V2COM-195" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:34",
+                "jiraStandard": "00h 34m",
+                "hour": "00",
+                "minute": "34"
+            },
+            "comments": "Apontamento das horas",
+            "issueDescription": "Rotina: PTI-1",
+            "jiraIssue": { "id": "69544", "alias": "PTI-1" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:22",
+                "jiraStandard": "00h 22m",
+                "hour": "00",
+                "minute": "22"
+            },
+            "comments": "Organização do HANA",
+            "issueDescription": "Saneamento - Organização e Suporte das Soluções: SMPW-13",
+            "jiraIssue": { "id": "164353", "alias": "SMPW-13" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "01:09",
+                "jiraStandard": "01h 09m",
+                "hour": "01",
+                "minute": "09"
+            },
+            "comments": "Reunião de cronograma da atualização B1",
+            "issueDescription": "Atualização B1 - Planejamento: ASBOPV-10",
+            "jiraIssue": { "id": "172528", "alias": "ASBOPV-10" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        },
+        {
+            "timeLog": {
+                "excelStandard": "00:50",
+                "jiraStandard": "00h 50m",
+                "hour": "00",
+                "minute": "50"
+            },
+            "comments": "Ajuda tironi script deletar Uom",
+            "issueDescription": "Watt Drive - Saneamento de Visões: WATT-1543",
+            "jiraIssue": { "id": "97942", "alias": "WATT-1543" },
+            "workLogDate": {
+                "jsStandard": "2021-01-20T03:00:00.000Z",
+                "jiraStandard": "20/Jan/2021 08:00 PM"
+            }
+        }
+    ]
+}
