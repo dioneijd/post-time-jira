@@ -56,7 +56,7 @@ async function robot(browser) {
         content.workLogData.forEach( worklog => {
             worklog.workLogDate =  {
                 jsStandard: new Date(`${year}-${month}-${day}`),
-                jiraStandard: `${day}/${month}/${year} 08:00 PM`
+                jiraStandard: `${day}/${month}/${year} 08:00 AM`
             }            
         })
 
