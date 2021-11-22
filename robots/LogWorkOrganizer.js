@@ -18,9 +18,6 @@ async function robot(browser) {
     console.log('>>>> LOG_WORK_ORGANIZER - Finished')
 
     
-
-
-
     
     async function ReadCsvAndLoadDataToContent() {
 
@@ -62,8 +59,6 @@ async function robot(browser) {
 
     }
 
-
-
     function DefineTimeLogForJira(){
         content.workLogData.forEach( workLog => {
             workLog.timeLog = {
@@ -103,7 +98,7 @@ async function robot(browser) {
 
             const alreadyExist = content.jiraIssues.find(issue => issue.id == issueId)
 
-            if (!alreadyExist) 
+            if (!alreadyExist && workLog.jiraIssue.id != '' && workLog.jiraIssue.alias != '') 
                 content.jiraIssues.push(workLog.jiraIssue)
 
             await page.close()
