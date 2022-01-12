@@ -20,6 +20,7 @@ async function robot(browser) {
     
     
     async function ReadCsvAndLoadDataToContent() {
+        console.log('>>>> LOG_WORK_ORGANIZER - ReadCsvAndLoadDataToContent - Starting')
 
         const csvParameters = content.paramenters.csv_file
         
@@ -35,6 +36,7 @@ async function robot(browser) {
     }
 
     function DefineWorkLogDate(){
+        console.log('>>>> LOG_WORK_ORGANIZER - DefineWorkLogDate - Starting')
 
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         let resp, day, month, year
@@ -54,12 +56,14 @@ async function robot(browser) {
             worklog.workLogDate =  {
                 jsStandard: new Date(`${year}-${month}-${day}`),
                 jiraStandard: `${day}/${month}/${year} 08:00 AM`
-            }            
+            }
         })
 
     }
 
     function DefineTimeLogForJira(){
+        console.log('>>>> LOG_WORK_ORGANIZER - DefineTimeLogForJira - Starting')
+
         content.workLogData.forEach( workLog => {
             workLog.timeLog = {
                 excelStandard: workLog.timeLog,
@@ -68,9 +72,11 @@ async function robot(browser) {
                 minute: workLog.timeLog.substring(3,5),
             }
         })
+        console.log('>>>> LOG_WORK_ORGANIZER - DefineTimeLogForJira - Finished')
     }
 
     function SearchIssueIdByLocalDatabaseAndSave(){
+        console.log('>>>> LOG_WORK_ORGANIZER - SearchIssueIdByLocalDatabaseAndSave - Starting')
         content.workLogData.forEach( workLog => {
 
             workLog.jiraIssue = {
@@ -82,9 +88,11 @@ async function robot(browser) {
             if (jiraIssue) workLog.jiraIssue.id = jiraIssue.id
 
         })
+        console.log('>>>> LOG_WORK_ORGANIZER - SearchIssueIdByLocalDatabaseAndSave - Finished')
     }
 
     async function SearchIssueIdByWebsiteAndSave(){
+        console.log('>>>> LOG_WORK_ORGANIZER - SearchIssueIdByWebsiteAndSave - Starting')
 
         const workLogWithoutIssueID = content.workLogData.filter( workLog => workLog.jiraIssue.id == '')
 
@@ -106,6 +114,7 @@ async function robot(browser) {
 
         await Promise.all(workLogPromisses)
 
+        console.log('>>>> LOG_WORK_ORGANIZER - SearchIssueIdByWebsiteAndSave - Finished')
     }
             
 }

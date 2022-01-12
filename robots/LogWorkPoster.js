@@ -14,6 +14,7 @@ async function robot(browser) {
 
 
     async function OpenJiraIssueAndPostLogWork() {
+        console.log('>>>> LOG_WORK_POSTER - OpenJiraIssueAndPostLogWork - Starting')
 
         const workLogPromisses = content.workLogData.map( async workLog => {
             
@@ -30,22 +31,17 @@ async function robot(browser) {
             await page.type('#comment', workLog.comments)
             await page.click('#log-work-submit')
 
-            await page.waitForNavigation()
+            await page.waitForSelector('#summary-val')
+
             page.close()
 
         })
-
         
         await Promise.all(workLogPromisses)
 
+        console.log('>>>> LOG_WORK_POSTER - OpenJiraIssueAndPostLogWork - Finished')
+
     }
-
-
-
-
-
-
-
 
 }
 
