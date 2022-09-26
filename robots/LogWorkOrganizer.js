@@ -39,6 +39,7 @@ async function robot(browser) {
         console.log('>>>> LOG_WORK_ORGANIZER - DefineWorkLogDate - Starting')
 
         const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         let resp, day, month, year, totalDays
 
         do {
@@ -46,9 +47,15 @@ async function robot(browser) {
             month = months[readline.question('Informar o dia (MM): ', { limit: input => input>=1 && input<=12, limitMessage: 'Must be a number between 1 and 12'}) - 1]
             year = readline.question('Informar o dia (YYYY): ', { limit: input => input>=2020 && input<=2100, limitMessage: 'Must be a number between 2020 and 2030'})
             
-            totalDays = Math.floor((new Date().getTime() - new Date(`${month}/${day}/${year}`).getTime()) / (1000 * 3600 * 24))
+            const inputDate = new Date(`${month}/${day}/${year}`)
 
-            resp = readline.question(`Do you confirm the date ${day}-${month}-${year} (${totalDays} days ago) [Y/n]: `, {limit: input => input.toUpperCase() == 'Y' || input.toUpperCase() == 'N'}).toUpperCase()
+            totalDays = Math.floor((new Date().getTime() - inputDate.getTime()) / (1000 * 3600 * 24))
+            weekDay = weekDays[inputDate.getDay()]
+
+            resp = readline.question(
+                `Do you confirm the date ${weekDay}, ${day}-${month}-${year} (${totalDays} days ago) [Y/n]: `,
+                {limit: input => input.toUpperCase() == 'Y' || input.toUpperCase() == 'N'}
+            ).toUpperCase()
         
             if (resp != 'Y') console.log('ok... Vamos tentar novamente:')
 
