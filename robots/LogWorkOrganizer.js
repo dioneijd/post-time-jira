@@ -8,6 +8,9 @@ async function robot(browser) {
     let content = state.Load()
     
     await ReadCsvAndLoadDataToContent()
+    if (content.paramenters.csv_file.removeEmptyLines) {
+        RemoveEmptyLines()
+    }
     DefineWorkLogDate()
     DefineTimeLogForJira()
     SearchIssueIdByLocalDatabaseAndSave()
@@ -33,6 +36,14 @@ async function robot(browser) {
         const csvPathFile = csvParameters.filePath
 
         content.workLogData = await csv(option).fromFile(csvPathFile)        
+    }
+
+    function RemoveEmptyLines(){
+        console.log('>>>> LOG_WORK_ORGANIZER - RemoveEmptyLines - Starting')
+
+        content.workLogData = content.workLogData.filter( workLog =>
+            workLog.timeLog != "00:00" || workLog.comments != ""  || workLog.issueDescription != "" || workLog.jiraIssue != ""        
+        )
     }
 
     function DefineWorkLogDate(){
