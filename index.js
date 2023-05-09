@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const state = require('./robots/state.js')
 
 const robots = {
     logon: require('./robots/Logon.js'),
@@ -7,15 +8,19 @@ const robots = {
 }
 
 
+
+
 async function start() {
 
     console.log('>>>> START - Starting') 
 
+    const params = state.Load().parameters
     let browser
+    
     await OpenBrowser(true)    
 
-    await robots.logon(browser)
-    await robots.logWorkOrganizer(browser)
+    await robots.logon(browser, params.system)
+    await robots.logWorkOrganizer(browser, params)
     await robots.logWorkPoster(browser)
 
     await browser.close()

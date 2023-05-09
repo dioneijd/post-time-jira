@@ -2,13 +2,13 @@ const state = require('./state.js')
 const csv = require('csvtojson')
 const readline = require('readline-sync')
 
-async function robot(browser) {
+async function robot(browser, params) {
     console.log('>>>> LOG_WORK_ORGANIZER - Starting')
     
     let content = state.Load()
     
     await ReadCsvAndLoadDataToContent()
-    if (content.paramenters.csv_file.removeEmptyLines) {
+    if (params.csv_file.removeEmptyLines) {
         RemoveEmptyLines()
     }
     DefineWorkLogDate()
@@ -25,10 +25,10 @@ async function robot(browser) {
     async function ReadCsvAndLoadDataToContent() {
         console.log('>>>> LOG_WORK_ORGANIZER - ReadCsvAndLoadDataToContent - Starting')
 
-        const csvParameters = content.paramenters.csv_file
+        const csvParameters = params.csv_file
         
         const option = {
-            "noheader": csvParameters.noheader,
+            "noheader": csvParameters.noHeader,
             "headers": csvParameters.headers,
             "delimiter": csvParameters.delimiter
         }
@@ -72,8 +72,8 @@ async function robot(browser) {
 
         } while (resp.toUpperCase() != 'Y')
 
-        content.workLogData.forEach( worklog => {
-            worklog.workLogDate =  {
+        content.workLogData.forEach( workLog => {
+            workLog.workLogDate =  {
                 jsStandard: new Date(`${year}-${month}-${day}`),
                 jiraStandard: `${day}/${month}/${year} 08:00 AM`
             }

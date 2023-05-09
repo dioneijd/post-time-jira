@@ -1,11 +1,19 @@
 const readline = require('readline-sync')
 
 
-async function robot(browser) {
+async function robot(browser, sysParams) {
     console.log('>>>> LOGON - Starting')
+
+    let page
     
-    const credential = await AskPasswordAndReturnCredentialObject()
-    await GotoJiraAndMakeLogin(credential)
+    await OpenJiraSite()
+    
+    if (sysParams.askJiraCredential){
+        const credential = await AskPasswordAndReturnCredentialObject()
+        await MakeJiraLogin(credential)
+    }
+
+    await page.waitForNavigation()
 
     console.log('>>>> LOGON - Finished')
 
@@ -19,15 +27,17 @@ async function robot(browser) {
         return cred
     }
 
-    async function GotoJiraAndMakeLogin(credential){    
-        const page = await browser.newPage()
-        await page.goto('https://jira.weg.net')
-    
+    async function OpenJiraSite(){
+        page = await browser.newPage()
+        await page.goto(sysParams.jiraUrl)
+    }
+
+    async function MakeJiraLogin(credential){    
         await page.type('#login-form-username', credential.user)
         await page.type('#login-form-password', credential.password)
         await page.click('#login, #login-form-submit')
         
-        await page.waitForNavigation()        
+        await page.waitForNavigation()
     }
 
 }
