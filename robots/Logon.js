@@ -11,6 +11,9 @@ async function robot(browser, sysParams) {
     if (sysParams.askJiraCredential){
         const credential = await AskPasswordAndReturnCredentialObject()
         await MakeJiraLogin(credential)
+    } 
+    else {
+        console.log('Please make login manually')
     }
 
     await page.waitForNavigation()
