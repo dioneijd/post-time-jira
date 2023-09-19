@@ -30,7 +30,7 @@ async function start() {
 
     async function OpenBrowser(show){
         let option = {
-            timeout: 30000,
+            timeout: 60000,
             headless: true,
         }
 
